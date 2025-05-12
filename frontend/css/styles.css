@@ -1,0 +1,737 @@
+:root {
+    --color-primary: #84af97; /* Verde principal */
+    --color-secondary: #8bc59b; /* Verde mais suave */
+    --color-tertiary: #9d9f89; /* Verde opaco */
+    --color-quaternary: #b2de93; /* Verde claro */
+    --color-bg: #ffffff; /* Fundo branco */
+    --color-bg-light: #f5f5f5; /* Branco sujo */
+    --color-bg-dark: #f1f1f1; /* Branco suave */
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--color-bg);
+    color: #333; /* Texto em cinza escuro para melhorar o contraste */
+    transition: background-color 0.3s ease;
+}
+
+/* Estilo do header */
+header {
+    background-color: var(--color-primary);
+    color: white;
+    padding: 20px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+header ul {
+    list-style: none;
+    display: flex;
+}
+
+header ul li {
+    margin-left: 20px;
+}
+
+header ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+header ul li a:hover {
+    color: var(--color-fifth); /* Efeito de hover mais suave */
+}
+
+/* Estilos para promoções */
+#promotions {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    background-color: var(--color-quaternary);
+    margin: 20px 0;
+    border-radius: 8px;
+}
+
+.promo-item {
+    background-color: var(--color-secondary);
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 4px;
+    color: white;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.promo-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.promo-item img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+/* Estilo do carrinho flutuante */
+.floating-cart {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: var(--color-bg-light);
+    border: 1px solid var(--color-bg-dark);
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 15px;
+    z-index: 1000;
+    width: 350px; /* Aumentar a largura */
+    max-height: 500px; /* Limitar a altura */
+    overflow-y: auto; /* Adicionar rolagem se necessário */
+}
+
+.cart-btn {
+    background-color: var(--color-primary);
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.cart-btn:hover {
+    background-color: var(--color-quaternary);
+}
+
+.cart-content {
+    display: none;
+    margin-top: 10px;
+}
+
+.floating-cart:hover .cart-content {
+    display: block;
+}
+
+#cart-items {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#cart-items li {
+    margin-bottom: 5px;
+}
+
+#checkout-btn {
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#checkout-btn:hover {
+    background-color: #218838;
+}
+
+/* Estilos para a seção de produtos */
+section {
+    background-color: var(--color-bg-light);
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.product-item {
+    background-color: var(--color-bg-dark);
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 8px;
+    color: #333; /* Texto escuro para melhorar a legibilidade */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+button {
+    background-color: var(--color-primary);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: var(--color-secondary);
+}
+
+/* Estilos específicos para a página de produtos */
+.products-section {
+    padding: 40px;
+    background-color: var(--color-bg-light);
+}
+
+.products-section h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: var(--color-primary);
+}
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.product-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+/* Preço original riscado */
+.original-price {
+    text-decoration: line-through;
+    color: #888;
+    margin-right: 10px;
+}
+
+/* Preço promocional em destaque */
+.promo-price {
+    color: #e63946;
+    font-weight: bold;
+}
+
+/* Estilos para a página de login */
+.login-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: var(--color-bg-light);
+}
+
+.login-container h2 {
+    color: var(--color-primary);
+    margin-bottom: 20px;
+}
+
+.login-container .form-group {
+    margin-bottom: 15px;
+}
+
+.login-container .form-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: var(--color-secondary);
+}
+
+.login-container .form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--color-tertiary);
+    border-radius: 5px;
+    transition: border-color 0.3s ease;
+}
+
+.login-container .form-group input:focus {
+    border-color: var(--color-primary);
+}
+
+.login-container .btn {
+    background-color: var(--color-primary);
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.login-container .btn:hover {
+    background-color: var(--color-secondary);
+}
+
+.login-container p {
+    margin-top: 15px;
+}
+
+.login-container p a {
+    color: var(--color-primary);
+    text-decoration: none;
+}
+
+.login-container p a:hover {
+    text-decoration: underline;
+}
+
+/* Acessibilidade e foco */
+a:focus, button:focus, input:focus {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+}
+
+/* Adicionando altura mínima para garantir que a página ocupe toda a tela */
+.login-container, .register-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh; /* Isso vai garantir que o container ocupe pelo menos toda a altura da tela */
+}
+
+.hidden {
+    display: none; /* Continua escondendo as seções */
+}
+
+#login-section, #register-section {
+    width: 100%;
+    max-width: 400px; /* Adicionando um limite de largura para não ficar muito grande em telas grandes */
+    padding: 20px;
+    margin: 0 auto;
+}
+
+/* Certificando-se de que as seções tenham uma margem inferior mínima */
+.login-container h2, .register-container h2 {
+    margin-bottom: 20px;
+}
+
+/* Estilo da página de perfil */
+.profile-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: var(--color-bg-light);
+}
+
+.profile-container h2 {
+    color: var(--color-primary);
+    margin-bottom: 20px;
+}
+
+#purchase-history {
+    background-color: var(--color-quaternary);
+    padding: 20px;
+    width: 100%;
+    max-width: 600px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#purchase-history h3 {
+    margin-bottom: 15px;
+    color: var(--color-primary);
+}
+
+#history-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+#history-list li {
+    padding: 10px;
+    background-color: var(--color-bg-dark);
+    margin-bottom: 10px;
+    border-radius: 5px;
+    color: #333;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Estilo da página de checkout */
+.checkout-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: var(--color-bg-light);
+}
+
+.checkout-container h2 {
+    color: var(--color-primary);
+    margin-bottom: 20px;
+}
+
+.checkout-step {
+    background-color: var(--color-quaternary);
+    padding: 20px;
+    width: 100%;
+    max-width: 600px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.checkout-step h3 {
+    margin-bottom: 15px;
+    color: var(--color-primary);
+}
+
+.checkout-step .form-group {
+    margin-bottom: 15px;
+}
+
+.checkout-step .form-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: var(--color-secondary);
+}
+
+.checkout-step .form-group input,
+checkout-step .form-group select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--color-tertiary);
+    border-radius: 5px;
+    transition: border-color 0.3s ease;
+}
+
+.checkout-step .form-group input:focus,
+checkout-step .form-group select:focus {
+    border-color: var(--color-primary);
+}
+
+.summary-container {
+    background-color: var(--color-bg-dark);
+    padding: 20px;
+    width: 100%;
+    max-width: 600px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.summary-container h3 {
+    margin-bottom: 15px;
+    color: var(--color-primary);
+}
+
+.summary-container .summary-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--color-bg-light);
+}
+
+.summary-container .summary-item:last-child {
+    border-bottom: none;
+}
+
+.summary-container .summary-item span {
+    color: #333;
+}
+
+.checkout-btn {
+    background-color: var(--color-primary);
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.checkout-btn:hover {
+    background-color: var(--color-secondary);
+}
+
+/* Estilo da seção de frete */
+.freight-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.freight-section .freight-btn {
+    background-color: var(--color-secondary);
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-left: 10px;
+}
+
+.freight-section .freight-btn:hover {
+    background-color: var(--color-primary);
+}
+
+.freight-section .withdraw-btn {
+    background-color: var(--color-primary);
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-left: 10px;
+}
+
+.freight-section .withdraw-btn:hover {
+    background-color: var(--color-secondary);
+}
+
+/* Estilo para promoções */
+.promo-item {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px;
+    text-align: center;
+    background-color: #f9f9f9;
+}
+
+.promo-item img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.original-price {
+    text-decoration: line-through;
+    color: #888;
+}
+
+.promo-price {
+    color: #e63946;
+    font-weight: bold;
+}
+
+/* Estilo do contêiner do filtro */
+.filter-container {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.filter-container label {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+#category-filter {
+    padding: 5px 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    cursor: pointer;
+}
+
+#category-filter:hover {
+    border-color: #84af97; /* Verde principal */
+}
+
+/* Estilo para as páginas de status */
+.status-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 100vh;
+    background-color: var(--color-bg-light);
+    padding: 20px;
+}
+
+.status-title {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.status-title.success {
+    color: var(--color-primary); /* Verde principal */
+}
+
+.status-title.error {
+    color: #e63946; /* Vermelho suave para erros */
+}
+
+.status-title.pending {
+    color: var(--color-secondary); /* Verde mais suave */
+}
+
+.status-message {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.btn-green {
+    background-color: var(--color-primary);
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.btn-green:hover {
+    background-color: var(--color-secondary);
+}
+
+.btn-primary {
+    background-color: var(--color-primary);
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: var(--color-secondary);
+}
+
+.product-stock {
+    font-size: 0.9rem;
+    color: var(--color-tertiary);
+    margin-bottom: 12px;
+}
+
+.product-stock .out-of-stock {
+    color: #e63946; /* Vermelho para indicar esgotado */
+    font-weight: bold;
+}
+
+.add-to-cart-btn:disabled {
+    background-color: #ccc;
+    color: #666;
+    cursor: not-allowed;
+}
+
+.discount-badge {
+    background-color: #d9e8d4; /* Cinza esverdeado claro */
+    color: #4a7c59; /* Verde escuro */
+    font-size: 0.9rem;
+    font-weight: bold;
+    padding: 2px 6px;
+    border-radius: 4px;
+    margin-left: 8px;
+    display: inline-block;
+}
+
+/* Estilo para os itens do carrinho */
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--color-bg-light);
+}
+
+.cart-controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.quantity-btn {
+    background-color: var(--color-primary);
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.quantity-btn:hover {
+    background-color: var(--color-secondary);
+    transform: scale(1.1); /* Leve aumento no hover */
+}
+
+.quantity {
+    font-size: 1rem;
+    font-weight: bold;
+    color: var(--color-tertiary);
+}
+
+.item-price {
+    font-size: 1rem;
+    font-weight: bold;
+    color: var(--color-primary);
+}
+
+.remove-btn {
+    background-color: transparent;
+    color: #e63946; /* Vermelho para indicar remoção */
+    border: none;
+    font-size: 1.2rem; /* Fonte menor */
+    cursor: pointer;
+    transition: color 0.3s ease, transform 0.2s ease;
+    padding: 4px; /* Reduzindo o tamanho do botão */
+}
+
+.remove-btn:hover {
+    color: #c53030; /* Vermelho mais escuro no hover */
+    transform: scale(1.1); /* Leve aumento no hover */
+}
+
+/* Estilo para os pop-ups */
+.popup {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: var(--color-primary);
+    color: #fff;
+    padding: 15px 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.popup.hidden {
+    opacity: 0;
+    transform: translateY(20px);
+    pointer-events: none;
+}
+
+#token-popup {
+    bottom: 50%;
+    right: 50%;
+    transform: translate(50%, 50%);
+    width: 300px;
+    text-align: center;
+}
+
+#token-popup p {
+    margin-bottom: 15px;
+    font-size: 1rem;
+    font-weight: bold;
+}
+

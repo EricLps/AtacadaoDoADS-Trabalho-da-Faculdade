@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Finalizar Pagamento</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">Atacadão do ADS</div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="produtos.html">Produtos</a></li>
+                <li><a href="perfil.html">Perfil</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="checkout-container">
+        <div class="checkout-header">
+            <h1>Finalizar Compra</h1>
+        </div>
+
+        <div class="checkout-summary">
+            <h2>Resumo do Carrinho</h2>
+            <div id="cart-summary">
+                <!-- Produtos do carrinho serão exibidos aqui -->
+            </div>
+            <div class="summary-item">
+                <span>Subtotal:</span>
+                <span id="subtotal">R$ 0,00</span>
+            </div>
+            <div class="summary-item">
+                <span>Frete:</span>
+                <span id="shipping-cost">R$ 0,00</span>
+            </div>
+            <div class="summary-item total">
+                <strong>Total:</strong>
+                <strong id="total-cost">R$ 0,00</strong>
+            </div>
+        </div>
+
+        <div class="checkout-step">
+            <h2>Calcular Frete</h2>
+            <input type="text" id="cep-input" placeholder="Digite seu CEP" maxlength="9" class="input-cep">
+            <button id="calculate-shipping-btn" class="btn-primary">Calcular Frete</button>
+        </div>
+
+        <div class="checkout-step hidden" id="shipping-step">
+            <h2>Escolha o Frete</h2>
+            <select id="shipping-options" class="select-shipping">
+                <option value="">Selecione o frete</option>
+            </select>
+        </div>
+
+        <button class="checkout-btn btn-primary" id="pay-btn">Ir para o Pagamento</button>
+    </div>
+
+    <script src="js/checkout.js"></script>
+</body>
+</html>

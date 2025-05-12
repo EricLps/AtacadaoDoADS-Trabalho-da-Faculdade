@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atacadão do ADS</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">Mercado Ads</div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="produtos.html">Produtos</a></li>
+                <li><a href="checkout.html">Checkout</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="promotions-section">
+        <h1>Produtos em Promoção</h1>
+        <div id="promotions-container" class="products-grid">
+            <!-- Os produtos em promoção serão carregados dinamicamente pelo JS -->
+        </div>
+    </section>
+
+    <!-- Carrinho Flutuante -->
+    <div id="cart" class="floating-cart">
+        <button class="cart-btn">Carrinho</button>
+        <div class="cart-content">
+            <p>Itens no carrinho</p>
+            <ul id="cart-items">
+                <!-- Itens do carrinho aparecerão aqui -->
+            </ul>
+            <button id="checkout-btn">Finalizar Compra</button>
+        </div>
+    </div>
+
+    <!-- Pop-up para avisos rápidos -->
+    <div id="quick-popup" class="popup hidden"></div>
+
+    <!-- Pop-up fixo para o token -->
+    <div id="token-popup" class="popup hidden">
+        <p id="token-message"></p>
+        <button id="save-token-btn" class="btn-primary">Token Salvo</button>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/promotions.js"></script>
+</body>
+</html>

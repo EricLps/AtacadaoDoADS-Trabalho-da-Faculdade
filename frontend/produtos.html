@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Produtos - Atacadao ADS</title>
+</head>
+<body>
+
+    <!-- Cabeçalho -->
+    <header>
+        <nav>
+            <div class="logo">Atacadão do ADS</div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="produtos.html">Produtos</a></li>
+                <li><a href="checkout.html">Checkout</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Sessão de Produtos -->
+    <section class="products-section">
+        <h1>Produtos</h1>
+        <!-- Filtro de Categorias -->
+        <div class="filter-container">
+            <label for="category-filter">Filtrar por Categoria:</label>
+            <select id="category-filter">
+                <option value="all">Todas</option>
+                <!-- As opções serão preenchidas dinamicamente -->
+            </select>
+        </div>
+
+        <div class="products-grid" id="products-container">
+            <!-- Os produtos serão carregados dinamicamente pelo JavaScript -->
+        </div>
+    </section>
+
+    <!-- Carrinho Flutuante -->
+    <div id="cart" class="floating-cart">
+        <button class="cart-btn">Carrinho</button>
+        <div class="cart-content">
+            <p>Itens no carrinho:</p>
+            <ul id="cart-items">
+                <!-- Itens do carrinho aparecerão aqui -->
+            </ul>
+            <p id="cart-total"><strong>Total:</strong> R$ 0,00</p>
+            <button id="checkout-btn">Finalizar Compra</button>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
